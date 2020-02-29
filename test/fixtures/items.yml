@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  title: MyString
+  type: 
+  price: 9.99
+  harvest_time: 2020-02-29 16:22:23
+  spray_free: false
+  organic: false
+  gluten_free: false
+
+two:
+  user: two
+  title: MyString
+  type: 
+  price: 9.99
+  harvest_time: 2020-02-29 16:22:23
+  spray_free: false
+  organic: false
+  gluten_free: false
