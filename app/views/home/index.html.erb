@@ -1,4 +1,16 @@
-<h1> Test  </h1>
+<h1> D.O.O.F  </h1>
+<h2> The Urban Farmer </h2>
 
-<p><%=link_to "Registration", new_user_registration_path() %>
+<p> Welcome to the future of food production!</P>
+
+<p>
+        <% if user_signed_in? %>
+            <p>
+                <%=link_to "Shop", shop_path() %>
+            </p>
+        <% else %>
+            <p>
+                <%=link_to "Registration", new_user_registration_path() %>
+            </p>
+            <% end %>
 </p>

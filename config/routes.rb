@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   #Main Page
   root to: "home#index"
 
+  get "/shop", to: "shop#index", as: "shop"
+
 end
