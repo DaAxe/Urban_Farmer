@@ -12,17 +12,27 @@
   <body>
   
   
-  <div class="container">
+  <div class="container bg-dark">
    
-  <% if notice %>
-    <p class="notice"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-    <p class="alert"><%= alert %></p>
-  <% end %>
-  <%= render "shared/topnav" %>
-    <%= yield %>
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
+      <%= render "shared/topnav" %>
+        <section class="row">
+      <%= render "shared/sidenav"%>
+        <section class="col-10">
+        
+        <%= yield %>
+      </section>
+
+    </section>
+
   </div>
 
   </body>
+
 </html>
