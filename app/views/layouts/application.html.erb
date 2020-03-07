@@ -9,29 +9,29 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class= "p-3 mb-2 text-primary" id="bg-body">
   
   
-  <div class="container bg-dark">
-   
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
+    <div class="container bg-dark">
+    
+      <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
 
-      <%= render "shared/topnav" %>
-        <section class="row">
-      <%= render "shared/sidenav"%>
-        <section class="col-10">
-        
-        <%= yield %>
+        <%= render "shared/topnav" %>
+          <section class="row">
+        <%= render "shared/sidenav"%>
+          <section class="col-10">
+          
+          <%= yield %>
+        </section>
+
       </section>
 
-    </section>
-
-  </div>
+    </div>
 
   </body>
 

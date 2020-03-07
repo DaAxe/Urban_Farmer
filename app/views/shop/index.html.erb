@@ -1,16 +1,17 @@
-<html>
 
-    <body>
-        <div class="container p-3 mb-2 bg-dark text-white">
-        <h1> Welcome to the <br>
-        Online Farmers Market!  </h1>
-        </div>
+<div class="container p-3 mb-2 text-white">
+    <h1> Welcome to the <br>
+    Online Farmers Market!  </h1>
+</div>
+    <br>
+<div class="col-4">
+    <% if @items %>
+        <% @items.each do |item| %>
+            <li> <%= link_to item.title, item_path(item.id)%> || <%= item.category %> || <%= link_to 'Edit', edit_item_path(item)%>||<%= link_to 'Remove', item, method: "delete", class: "link" %>
+        <% end %>
+    <% end %>
+</div>
 
-
-
-
-
-    </body>
-
-
-</html>
+<div>
+    <span><%= image_tag 'map.png', alt:"Welcome to the Book Club", class:"growing-img"%> </span>
+</div>

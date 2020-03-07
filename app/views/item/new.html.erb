@@ -1,0 +1,43 @@
+<h2>Create New Item</h2>
+
+<%= form_with model: @item, url:create_item_path do |form| %>
+
+<p>
+    <%= form.label :title, "Title: " %>
+    <%= form.text_field :title, required: true, minlength: 1 %>
+</p>
+
+<p>
+    <%= label :category, "Category: " %>
+    <%= form.text_field :category, required: true %>
+</p>
+
+<p>
+    <%= label :description, "Description: " %>
+    <%= form.text_field :description %>
+</p>
+
+<p>
+    <%= form.label :price, "Price: " %>
+    <%= form.number_field :price, required: true, min: 0, step: '0.01' %>
+</p>
+
+<p>
+    <%= label :spray_free, "Spray-Free: " %>
+    <%= form.check_box :spray_free %>
+
+    <%= label :organic, "Organic: " %>
+    <%= form.check_box :organic %>
+
+    <%= label :gluten_free, "Gluten-Free: "%>
+    <%= form.check_box :gluten_free %>
+</p>
+
+<p>
+    <%= label :harvest_time, "Harvest Time: " %>
+    <%= form.date_field :harvest_time, :required => true %>
+</p>
+
+<%= form.submit "Add", class: "btn btn-success" %>
+
+<% end %>

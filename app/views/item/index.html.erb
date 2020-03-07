@@ -1,0 +1,18 @@
+<h1>Product List</h1>
+<p>Here you will find a full list of available items...</p>
+<p>While you are here paint the digital town red!</p>
+
+<ul>
+  <% @items.each do |item| %> 
+    <li>
+      <div><%= items.title %></div>
+      <div><%= items.type %></div>
+      <div><%= items.description %></div>
+      <div><%= items.harvest_time %></div>
+      <div><%= items.price %></div>
+    </li>
+  <% end %>
+</ul>
+
+<p>We hope you won't leave, without giving comfort to your body that it deserves!</p>
+

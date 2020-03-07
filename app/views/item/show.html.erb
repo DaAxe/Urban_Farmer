@@ -1,0 +1,40 @@
+<div class= ".container text-light">
+<h2> <%= @item.title %> Profile </h2>
+
+<p> These <%= @item.title %> have these qualities: 
+<br>
+<% if @item.organic == true %>
+<li> organic
+<% else %>
+<li> non-organic
+<% end %>
+<% if @item.spray_free == true %>
+<li> spray-free
+<% else %>
+<li> sprayed
+<% end %>
+<% if @item.gluten_free == true %>
+<li> gluten-free
+<% else %>
+<li> contains gluten
+<% end %>
+</p>
+
+<br>
+------------------
+<br>
+<p>
+Description:
+<br>
+<%= @item.description %>
+</p>
+------------------
+<br>
+<br>
+Available After:
+<%= @item.harvest_time%>
+<br><br>
+Cost:
+<%= @item.price%>
+<br><br>
+</div>
