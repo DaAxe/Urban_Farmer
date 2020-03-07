@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   # Main Page
   root to: "home#index"
-
+  get "/", to: "home#index", as: "index"
   # Show Shop
   get "/shop", to: "shop#index", as: "shop"
   #get 'item/index'
