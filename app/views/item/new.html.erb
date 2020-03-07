@@ -37,7 +37,10 @@
     <%= label :harvest_time, "Harvest Time: " %>
     <%= form.date_field :harvest_time, :required => true %>
 </p>
-
+<p>
+    <%= form.label :picture %>
+    <%= form.file_field :picture %>
+</p>
 <%= form.submit "Add", class: "btn btn-success" %>
 
 <% end %>

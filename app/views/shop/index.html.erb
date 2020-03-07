@@ -7,11 +7,12 @@
 <div class="col-4">
     <% if @items %>
         <% @items.each do |item| %>
-            <li> <%= link_to item.title, item_path(item.id)%> || <%= item.category %> || <%= link_to 'Edit', edit_item_path(item)%>||<%= link_to 'Remove', item, method: "delete", class: "link" %>
+            <div class="text-nowrap" style="width: 8rem;"><%= image_tag item.picture, class: 'img-thumbnail box', width: 120 if item.picture.attached? %> <%= link_to item.title, item_path(item.id)%> || <%= item.category %> || <%= link_to 'Edit', edit_item_path(item)%> || <%= link_to 'Remove', item, method: "delete", class: "link" %>
+            </div>
         <% end %>
     <% end %>
 </div>
 
 <div>
-    <span><%= image_tag 'map.png', alt:"Welcome to the Book Club", class:"growing-img"%> </span>
+    <span><%= image_tag 'map.png', alt:"Map", class:"map-img"%> </span>
 </div>

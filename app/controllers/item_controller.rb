@@ -1,7 +1,7 @@
 class ItemController < ApplicationController
   def index
   end
-
+  
   def new
     @item = Item.new
   end
@@ -18,8 +18,9 @@ class ItemController < ApplicationController
     @item.organic = params[:item][:organic]
     @item.gluten_free = params[:item][:gluten_free]
     @item.description = params[:item][:description]
+    @item.picture.attach(params[:item][:picture])
     if @item.save
-      flash[:notice] = "Saved! Your new book has been added..."
+      flash[:notice] = "Saved! Your produce has been added..."
       redirect_to shop_path
     else
       flash[:alert] = "Oops! There was a problem adding that item..."
@@ -54,6 +55,7 @@ class ItemController < ApplicationController
     @item.organic = params[:item][:organic]
     @item.gluten_free = params[:item][:gluten_free]
     @item.description = params[:item][:description]
+    @item.picture.attach(params[:item][:picture])
     if @item.save
       redirect_to shop_path
     end
