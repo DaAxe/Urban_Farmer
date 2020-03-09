@@ -1,9 +1,14 @@
 <nav class="col-2 border-right border-success text-light">
     <h3>Menu </h3>
+    <% if user_signed_in? %>
+        <% if current_user.email == "admin@email.com" %>
+    <p><button type="button" class="btn btn-danger"><%= link_to "Admin", admin_path %></button></p>
+        <% end %>
     <p><button type="button" class="btn btn-secondary"><%= link_to "Home", root_path %></button></p>
     <p><button type="button" class="btn btn-success"><%= link_to "Buy", shop_path %></button></p>
     <p><button type="button" class="btn btn-danger"><%= link_to "Sell", sell_path %></button></p>
     <p><button type="button" class="btn btn-warning"><%= link_to "Host", root_path %></button></p>
     <p><button type="button" class="btn btn-light"><%= link_to "Cooperate", root_path %></button></p>
-
+    <% end %>
+    
 </nav>

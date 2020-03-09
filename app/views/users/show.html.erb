@@ -1,0 +1,8 @@
+<h1>Members List</h1>
+<% for user in @users %>
+    <p>
+                <%= link_to "#{user.first_name} #{user.last_name}", user_profile_path(user.id) %>
+        <%= user.email %>
+
+    </p>
+<% end%>

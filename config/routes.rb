@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  get 'users/show'
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
@@ -25,6 +26,17 @@ Rails.application.routes.draw do
   put "/item/:id", to: "item#update"
   patch "/item/:id", to: "item#update", as: "update_item"
   # Delete Item
-  delete "/item/:id", to: "item#destroy"
+  delete "/item/:id", to: "item#destroy", as: "delete_item"
+  
+  # Show Users Page
+  get "/users", to: "users#show", as: "show_users"
+  # Show User Page
+  get "/users/:id", to: "users#profile", as: "user_profile"
+  # Delete User
+  delete "/user/:id", to: "user#destroy", as: "delete_user"
+
+  # Admin Page
+  get "/admin", to: "admin#index", as: "admin"
+
 
 end
