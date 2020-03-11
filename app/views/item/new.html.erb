@@ -1,5 +1,5 @@
 <h2>Create New Item</h2>
-
+<br>
 <%= form_with model: @item, url:create_item_path do |form| %>
 
 <p>
@@ -41,6 +41,9 @@
     <%= form.label :picture %>
     <%= form.file_field :picture %>
 </p>
+<br>
 <%= form.submit "Add", class: "btn btn-success" %>
 
 <% end %>
+<br>
+<br>

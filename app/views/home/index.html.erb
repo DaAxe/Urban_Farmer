@@ -1,26 +1,27 @@
-<html>
 
 
-        <div class="container-fluid text-center border border-success rounded-pill bg-light">
-            <h1><a href="https://www.minds.com/divineorganisationoffreedom">D.O.O.F </a>  </h1>
-            <h2> The Urban Farmer </h2>
 
-            <p> Welcome to the future of food production!</P>
+<div class="container-fluid text-center border border-success rounded-pill bg-transparent">
+    <h1><a href="https://www.minds.com/divineorganisationoffreedom">D.O.O.F </a>  </h1>
+    <h2> The Urban Farmer </h2>
 
+    <p> Welcome to the future of food production!</P>
+
+    <p>
+        <% if user_signed_in? %>
             <p>
-                <% if user_signed_in? %>
-                    <p>
-                        <%=link_to "Shop", shop_path() %>
-                    </p>
-                <% else %>
-                    <p>
-                        <%=link_to "Registration", new_user_registration_path() %>
-                    </p>
-                <% end %>
+                <%=link_to "Shop", shop_path() %>
+            </p>
+        <% else %>
+            <p>
+                <%=link_to "Registration", new_user_registration_path() %>
+            </p>
+        <% end %>
 
-        </div>
+</div>
+
 <br><br><br><br>
-         <p class="badge badge-primary text-wrap" style="width: 45vw; font-size: 100%;">
+         <p class="badge badge-primary text-wrap align-items-center" style="width: 45vw; font-size: 100%;">
             For the better part of a generation, Australians have been subjected to a corporate dupoly that controls 80% of the food supply market share, not letting attributes such as quality, diversity and taste become selective pressures, but rather the directors of coles and woolworths and who is able to work with these large corporations.
             As a result we have focused on profit rather than soil health, consistency rather than diveristy, asthetics rathher than nutrient density. Therefore an entire generation of Australians (and westerners around the world) have fallen victim the modern American factory farming style which have wreaked havoc on their collective health. 
             Now new technologies and communication methods, have put the power back in the hands of consumers and producers. We can now work together and to our health back into our own hands, by the formation decentilised networks for cooperative food production!
