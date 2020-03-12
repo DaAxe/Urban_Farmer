@@ -1,0 +1,15 @@
+<h1><%= "Review"%></h1>
+<%=form_with model: @review do |form| %>
+    <%= form.hidden_field :rateable_type, value: @review.rateable_type %>
+    <%= form.hidden_field :rateable_id, value: @review.rateable_id %>
+    <p>
+        <%= label :rating, 'Rating' %>
+        <%= form.number_field :rating, min: 1, max: 5, required: true %>
+    </p>
+    <p>
+        <%= label :comment, 'Comments' %>
+        <%= form.text_area :comment %>
+    </p>
+    <%= form.submit "Add Review", calss: 'btn btn-success' %>
+    <%= link_to 'Cancel', :back, class: 'btn btn-danger' %>
+    <%end%>

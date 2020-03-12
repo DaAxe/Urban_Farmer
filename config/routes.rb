@@ -38,5 +38,8 @@ Rails.application.routes.draw do
   # Admin Page
   get "/admin", to: "admin#index", as: "admin"
 
+  # Review
+  get "/reviews/new", to: "reviews#new", as: "new_review"
+  post "/reviews/", to: "reviews#create"
 
 end

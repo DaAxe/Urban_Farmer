@@ -1,6 +1,8 @@
 <div class= ".container text-light">
 <h2> <%= @item.title %> Profile </h2>
+<%= image_tag @item.picture, size: '250' if @item.picture.attached? %>
 
+<div class="text-center">
 <p> These <%= @item.title %> have these qualities: 
 <br>
 <% if @item.organic == true %>
@@ -19,7 +21,7 @@
 <li> contains gluten
 <% end %>
 </p>
-
+</div>
 <br>
 ------------------
 <br>
@@ -38,3 +40,18 @@ Cost:
 <%= @item.price%>
 <br><br>
 </div>
+<div>
+    <h4> Reviews: </h4>
+    <%= link_to 'Add Review', new_review_path(item: @item), class:"btn btn-primary" %>
+    <br>
+    -----------------------------
+        <% if @reviews %>
+            <% @reviews.each do |review| %>
+                <p class='rating'><%= "Rating: #{review.rating}"%>
+                <p><%= review.user.email %></p>
+                <p><%= review.comment %> </p>
+                -----------------------------
+                <%end%>
+            <%end%>
+</div>
+
