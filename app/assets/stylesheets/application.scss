@@ -24,12 +24,24 @@ opacity: 95%;
     background-size: 100%;
 }
 
+#info1 {
+    color: #FFFFFF;
+    background-color: #607D8B;
+    opacity: 90%;
+    font-size: 1.2vw;
+    font-family: "Comic Sans MS", sans-serif;
+}
+
 .growing-img {
     max-width: 70%; 
 }
 
 .map-img {
     max-width: 95%; 
+}
+
+.garden-img {
+    height: 60vh
 }
 
 #news {

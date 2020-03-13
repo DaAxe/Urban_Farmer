@@ -1,0 +1,35 @@
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+ document
+   .querySelector("[id='pay-now']")
+   .addEventListener("click", () => {
+     const stripe = Stripe(
+       "<%= Rails.application.credentials.dig(:stripe, :public_key) %>"
+     );
+
+     stripe.redirectToCheckout({
+       sessionId: "<%= @session.id %>"
+     });
+   });
+</script>
+<h1> Confirm Order </h1>
+<p> Are you sure you want to place this order? </p>
+
+<h1 class="list-item"> Your order
+</h1>
+<table>
+<thead> <tr>
+     <th>Title</th>
+     <th>Author</th>
+     <th>Price</th>
+   </tr>
+ </thead>
+<tbody> <tr>
+<td><%= @item.title %></td>
+<td><%= @item.description %></td>
+<td><%= number_to_currency @item.price %></td>
+   </tr>
+ </tbody>
+</table>
+<button id="pay-now">Checkout now</button>
+

@@ -2,14 +2,14 @@
     <div><%= image_tag 'UF.png', alt:"UF Logo", class:"img-thumbnail logo"%> </div>
     <% if user_signed_in? %>
         <% if current_user.email == "admin@email.com" %>
-    <p><button type="button" class="btn btn-danger"><%= link_to "Admin", admin_path %></button></p>
+            <p><button type="button" class="btn btn-danger"><%= link_to "Admin", admin_path %></button></p>
         <% end %>
     <h3>Menu </h3>
-    <p><button type="button" class="btn btn-light"><%= link_to "Home", root_path %></button></p>
-    <p><button type="button" class="btn btn-light"><%= link_to "Buy", shop_path %></button></p>
-    <p><button type="button" class="btn btn-light"><%= link_to "Sell", sell_path %></button></p>
-    <p><button type="button" class="btn btn-light"><%= link_to "Host", root_path %></button></p>
-    <p><button type="button" class="btn btn-light"><%= link_to "Cooperate", root_path %></button></p>
+        <p><button type="button" class="btn btn-light"><%= link_to "Home", root_path %></button></p>
+        <p><button type="button" class="btn btn-light"><%= link_to "Buy", shop_path %></button></p>
+        <p><button type="button" class="btn btn-light"><%= link_to "Sell", sell_path %></button></p>
+        <p><button type="button" class="btn btn-light"><%= link_to "Host", host_path %></button></p>
+        <p><button type="button" class="btn btn-light"><%= link_to "Cooperate", root_path %></button></p>
     <% end %>
     
 </nav>

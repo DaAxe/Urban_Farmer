@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   # Show User Page
   get "/users/:id", to: "users#profile", as: "user_profile"
   # Delete User
-  delete "/user/:id", to: "user#destroy", as: "delete_user"
+  delete "/admin/:id", to: "admin#destroy", as: "delete_user"
 
   # Admin Page
   get "/admin", to: "admin#index", as: "admin"
@@ -42,4 +42,12 @@ Rails.application.routes.draw do
   get "/reviews/new", to: "reviews#new", as: "new_review"
   post "/reviews/", to: "reviews#create"
 
+  # Order Page
+  get "/order/:id", to: "order#new", as: "new_order"
+
+  # Hosts Page
+  get "/host", to: "host#index", as: "host"
+  get "/host/coming", to: "host#coming", as: "coming"
+
+  
 end

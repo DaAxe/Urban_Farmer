@@ -1,13 +1,12 @@
 class ItemController < ApplicationController
   def index
   end
-  
+# Initialise Item
   def new
     @item = Item.new
   end
-
+# Create New Item
   def create
-  
     @item = Item.new
     @item.user_id = current_user.id
     @item.title = params[:item][:title]
@@ -19,6 +18,7 @@ class ItemController < ApplicationController
     @item.gluten_free = params[:item][:gluten_free]
     @item.description = params[:item][:description]
     @item.picture.attach(params[:item][:picture])
+# If the item saves, or not, flash words
     if @item.save
       flash[:notice] = "Saved! Your produce has been added..."
       redirect_to shop_path
@@ -27,12 +27,13 @@ class ItemController < ApplicationController
       redirect_to sell_path
     end
   end
-
+# Initialise item to be reviewed 
   def show
     @item = Item.find(params[:id])
     @reviews = @item.reviews
   end
-
+  
+# Edit Item
   def edit
     @item = Item.find(params[:id])
   end

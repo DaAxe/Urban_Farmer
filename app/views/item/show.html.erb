@@ -5,20 +5,21 @@
 <div class="text-center">
 <p> These <%= @item.title %> have these qualities: 
 <br>
+<%# This if statement shows food restrictions %>
 <% if @item.organic == true %>
 <li> organic
 <% else %>
 <li> non-organic
 <% end %>
 <% if @item.spray_free == true %>
-<li> spray-free
-<% else %>
 <li> sprayed
+<% else %>
+<li> spray-free
 <% end %>
 <% if @item.gluten_free == true %>
-<li> gluten-free
-<% else %>
 <li> contains gluten
+<% else %>
+<li> gluten-free
 <% end %>
 </p>
 </div>
@@ -37,7 +38,28 @@ Available After:
 <%= @item.harvest_time%>
 <br><br>
 Cost:
-<%= @item.price%>
+<br>
+----------
+<br>
+<% if @item.price %>
+ <p>
+   <%= number_to_currency @item.price %>
+<br>
+   <%= link_to "Buy now", new_order_path(@item.id), class:"btn btn-primary" %>
+ </p>
+<% end %>
+or
+<br><br>
+Please Contact:
+<br>
+------------------------
+<br>
+<%= @item.user.first_name %> <%= " "%> <%= @item.user.last_name %>
+<br>
+<%= @item.user.phone_number %>
+<%= @item.user.email %>
+<br><br>
+To Purchase Offline
 <br><br>
 </div>
 <div>

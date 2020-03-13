@@ -1,11 +1,14 @@
 class ReviewsController < ApplicationController
 
+ # To initialise new rating
+ # Join polymorphic   
     def new
         @review = Review.new
         @review.rateable_id = params[:item]
-        @review.rateable_type = "item" #params[:item]
+        @review.rateable_type = "item"
     end
 
+ # Create Review and save to database
     def create
         item = Item.find(params[:review][:rateable_id])
         @review = item.reviews.new

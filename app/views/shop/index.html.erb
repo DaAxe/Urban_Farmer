@@ -7,7 +7,10 @@
 <div class="col-4">
     <% if @items %>
         <% @items.each do |item| %>
+           
             <div class="text-nowrap" style="width: 8rem;"><%= image_tag item.picture, class: 'img-thumbnail box', width: 120 if item.picture.attached? %> <%= link_to item.title, item_path(item.id)%> || <%= item.category %> || <%= link_to 'Edit', edit_item_path(item)%> || <%= link_to 'Remove', item, method: "delete", class: "link" %>
+            <br>
+            <p class='container font-weight-bold text-success'> $ <%= item.price%> </p>
             </div>
         <% end %>
     <% end %>
