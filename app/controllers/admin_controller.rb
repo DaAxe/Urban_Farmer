@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
-
+# Taking all values in the User model and saving it to the @users variable
     def index
         @users = User.all
     end

@@ -36,9 +36,9 @@ They are an industry leader in end-to-end cloud hosting solutions, as stated on 
 This is not completed due to not being able to find a good free hosting site that requires a visa card. 
 1. AWS - Requires Credit Card.
 2. Cloudinary addon in Heroku Requires Credit Card.
-Sorry I do not have a credit card for these purposes right now. 
-**I did however setup the cloudinary settings in my code, all thats needed is to pay for it on Heroku.**
-
+Realised that I dont need the official heroku addon as i created the accounts separately. 
+After a few errors and misconfigs...got it up and running. 
+https://urban-farmer.herokuapp.com/
 
 -----
 
@@ -100,7 +100,8 @@ Shop owners and Australian brands find it impossible to co-exist with massive co
 
 ### R9: URL To online App:
 
-N/A (Refer to R6)
+* https://urban-farmer.herokuapp.com/
+* https://github.com/DaAxe/Urban_Farmer 
 
 ### R10: Github Link:
 ![alt text](./app/assets/images/UF.png "Urban Farmer") 
@@ -124,7 +125,7 @@ This application is designed for property owners to get the maximum benefit out 
 - Rating system
 - Skilled Mentors & Workshops section
 - Sitemap
-![Logo](./docs/current_sitemap.jpg "Urban Farmer") 
+![Logo](./docs/SiteMap.png "Urban Farmer") 
 
 - Screenshots
 
@@ -140,11 +141,33 @@ This application is designed for property owners to get the maximum benefit out 
 3. Anyone who wants to collaborate on gardens and workshops.
 4. Anyone who has land to share.
 
-- Tech stack (e.g. html, css, deployment platform, etc)
+- Tech stack
+1. Html
+2. CSS
+3. Ruby on Rails
+4. Cloudinary
+5. Postgresql
+
+
+
+
+### R12: User Stories
+First Version of the user stories:
+![UserStories](./docs/kanban1.jpg)
+![UserStories](./docs/kanban2.jpg)
+
+Second Version:
+![UserStories](./docs/UserStories.png)
+![UserStories](./docs/UserStories0.png)
 
 ### R13: Wireframes
 
-Coming Soon
+![UserStories](./docs/WF1.png)
+![UserStories](./docs/WF2.png)
+![UserStories](./docs/WF3.png)
+![UserStories](./docs/WF4.png)
+![UserStories](./docs/WF5.png)
+
 
 ### R14: An ERD
 
@@ -164,6 +187,7 @@ Third party software cloudinary was used here to host the images, but the rest i
 Where a producer can list their items to be on the online marketplace. Here we will find an intake form that aims to normalise the data from the range of different products we may encounter. 
 With the help of dietary restriction checkboxes and a harvest date we can start to lay out whats needed for more precise filtering & mapping in the future. 
 This is probably not its final version yet, but is enough to get the idea across. 
+
 
 * **HOST** - 
 The Hosting section is for those people who have land and little time or little resources to develop that land, they are then able to list their land as available for share...allowing users to Cooperate on that land to build a garden, either specified by the landhost or what the team decides to grow based on local demand. 
@@ -188,16 +212,52 @@ Describe your projects models in terms of the relationships (active record assoc
 * Models
 * This relates to that
 
-### R18: Discuss the database relations to be implemented in your application
-* Profiles & Ratings
+* The User Model
+The user is also tied to a the devise relationships which are polymorphic tables which make the user able to register, authenticate and validate accounts. 
+A polymorphic table was also used for ratings so that future functionality can be implemented easier, spoken about below (R18).
+    - One user has many orders, even tough at this point the user can only buy one item at a time,
+    - One user has many items, because the user
 
+* The Item Model
+    - Belongs to the users model, one item can have only one user, but one user can have many items.
+    - Has one picture attached
+    - Have many reviews - via the polymorphic model (rateable)
+
+* Ratings Model
+ - Is a polymorphic model (rateable)
+ - Belongs to users model
+ - Can currently rate produce, but is set up for more ratings in the future, discussed below.
+
+
+
+### R18: Discuss the database relations to be implemented in your application
+* User Model
+    - Buyers -  eventually this model will also be associated with a "cart" model which could have many orders and many items through those orders.
+
+* Profiles & Ratings
+    - This section also aims to have the ability to rate users on "Trustworthyness" and their "Relyability" 
+    - Also to rate land on various parameters including what type of garden project is being developed and soild quality, needed expertise, etc.
+* Why
 * Cooperators
+    - Would have the ablility to "Join" different growing projects in their region. 
+    - Labourers can agree on a percentage split with the team and the landowner, based on what they have contributed. 
+    - Have a chatroom and checklist functionality 
+
 - Skilled Cooperators
-- Labourers
+    - Have the ability to run workshops or hire out in demand skills.
+
 - Land Hosts
+    - Can host multiple plots and see analytics on whats in demand in their local area
+    - Can see return on their lands
+    - Can speak with and coordinate with cooperators
 
 ### R19: Provide your database schema design
 
-
+![Database Scheme](./docs/scheme.png "Database Scheme") 
 
 ### R20: Describe the way tasks are allocated and tracked in your project
+
+Firstly User Stories were identified by actually drawing pictures of each potential type of user, then using a Kanban board (pictured in R12) user stories were collected and organised which gave me the "higher level" components to focus on.
+From here the User stories were transferred to trello and translated as they were being used. 
+The code was uploaded to github for source control from the beginning, continually pushing new components up as they have been developed. 
+Unfortunately due to some configuration errors, (ie my cloudinary account wasn't verified) I wasn't able to deploy my application until later on. 
