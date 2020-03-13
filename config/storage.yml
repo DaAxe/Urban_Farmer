@@ -34,7 +34,7 @@ local:
 #   mirrors: [ amazon, google, microsoft ]
 
 cloudinary:
-service: Cloudinary
-cloud_name: dzvvw9mib
-api_key: 816816144189174
-api_secret: AT3DWWuKLQbGAMfm6zh0qSPAbBY
+  service: Cloudinary
+  cloud_name: <%=Rails.application.credentials.dig(:cloudinary, :cloud_name) %>
+  api_key: <%=Rails.application.credentials.dig(:cloudinary, :api_key) %>
+  api_secret: <%=Rails.application.credentials.dig(:cloudinary, :api_secret) %>

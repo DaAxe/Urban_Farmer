@@ -11,7 +11,7 @@ gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
 
 # Cloudinary
-gem 'cloudinary', require: false
+gem 'cloudinary', require: true
 gem 'activestorage-cloudinary-service'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
